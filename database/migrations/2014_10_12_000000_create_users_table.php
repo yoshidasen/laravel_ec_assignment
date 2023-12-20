@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->boolean('delete_flag')->default(0);
+            $table->boolean('admin_flag')->default(0);
         });
     }
 
