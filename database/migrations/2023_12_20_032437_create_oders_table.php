@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('oders', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->foreignId('user_id')->constrained('users')->nullable(false);
+            $table->foreignId('address_id')->constrained('addresses')->nullable(false);
+            $table->string('payment_method')->nullable(false);
+            $table->foreignId('order_status')->constrained('oder_statuses')->default(01);
             $table->timestamps();
-            $table->boolean('delete_flag')->default(0);
-            $table->boolean('admin_flag')->default(0);
         });
     }
 
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('oders');
     }
 };

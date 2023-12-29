@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('oder_details', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->foreignId('oder_id')->constrained('oders')->nullable(false);
+            $table->foreignId('product_id')->constrained('product_details')->nullable(false);
+            $table->string('name')->nullable(false);
+            $table->integer('quantity')->nullable(false);
+            $table->integer('price')->nullable(false);
             $table->timestamps();
-            $table->boolean('delete_flag')->default(0);
-            $table->boolean('admin_flag')->default(0);
         });
     }
 
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('oder_details');
     }
 };
