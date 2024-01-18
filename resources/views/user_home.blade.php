@@ -4,9 +4,33 @@
 
 @section('content')
     user_hello
+    <style>
+        #container {
+            display: flex; /* flexbox */
+            flex-wrap: wrap; /* 折返し指定 */
+        }
+
+        #container div {
+            width: 25%;
+        }
+    </style>
+
+    <div id="container">
+    @foreach ($items as $item)
+        <div>
+            <a href="" style="text-decoration: none; color: black;">
+                <div style="margin: 0 auto; width: 200px;">
+                    <div style="width: 200px; height: 250px; background-color: darksalmon;"></div>
+                    <p>{{$item->name}}</p>
+                    <p style="text-align: right;">{{$item->price}}</p>
+                </div>
+            </a>
+        </div>
+    @endforeach
+    </div>
 
 
-    <table style="border: 1px solid #000;">
+    <!-- <table style="border: 1px solid #000;">
         <tr>
             <th>id</th>
             <th>name</th>
@@ -34,6 +58,6 @@
             <td>{{$item->create_at}}</td>
             <td>{{$item->update_at}}</td>
         </tr>
-        @endforeach
-    </table>
+        @endforeach 
+    </table>-->
 @endsection
