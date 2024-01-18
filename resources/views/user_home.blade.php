@@ -1,9 +1,11 @@
-@extends('layouts.login')
+@extends('layouts.user')
 
 @section('title', 'top')
 
 @section('content')
-    index
+    user_hello
+
+
     <table style="border: 1px solid #000;">
         <tr>
             <th>id</th>

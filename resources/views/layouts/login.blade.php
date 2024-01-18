@@ -1,13 +1,10 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'EC') }}</title>
+    <title>{{ config('app.name', 'EC') }}|@yield('title')</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -29,16 +26,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <!-- <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto">
 
-                    </ul> -->
-
-
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <!-- <ul class="navbar-nav ms-auto"> -->
+                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        <!-- @guest
+                        @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -69,14 +64,19 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul> -->
+                    </ul>
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
+    <main>
+        <h1>@yield('title')</h1>
+        <div class="content">
+            @yield('content')
+        </div>
+    </main>
+    <footer>
+        ©2023 laravel yoshida
+    </footer>
 </body>
 </html>
