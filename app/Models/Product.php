@@ -21,6 +21,11 @@ class Product extends Model
         return $query->where('delete_flag', '=', 0);
     }
 
+    // 公開されている項目を検索するスコープ
+    public function scopeReleaseFlag($query) {
+        return $query->where('release_flag', '=', 1);
+    }
+
     public function category() {
         return $this->belongsTo('App\Models\Category');
     }
