@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +16,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
+// Route::get('/user_home', function () {
+//     return view('user_home');
+// });
 
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('user_home', [ProductController::class, 'index']);
+
+// Route::get('user_home', [HomeController::class, 'index'])->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/login_form', [App\Http\Controllers\HomeController::class, 'index'])->name('login_from');
+
+
