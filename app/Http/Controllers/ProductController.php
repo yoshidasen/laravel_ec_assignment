@@ -13,4 +13,9 @@ class ProductController extends Controller
         // $items = Product::where('delete_flag' )
         return view('user_home', ['items' => $items]);
     }
+
+    public function find($id) {
+        $items = Product::find($id);
+        return view('user.product_detail', ['items' => $items]);
+    }
 }

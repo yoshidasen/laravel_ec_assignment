@@ -18,7 +18,7 @@
     <div id="container">
     @foreach ($items as $item)
         <div>
-            <a href="" style="text-decoration: none; color: black;">
+            <a href="/user/product_detail/{{$item->id}}" style="text-decoration: none; color: black;">
                 <div style="margin: 0 auto; width: 200px;">
                     <div style="width: 200px; height: 250px; background-color: darksalmon;"></div>
                     <p>{{$item->name}}</p>

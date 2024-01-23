@@ -34,4 +34,5 @@ Auth::routes();
 
 Route::get('/login_form', [App\Http\Controllers\HomeController::class, 'index'])->name('login_from');
 
+Route::get('/user/product_detail/{id}', [ProductController::class, 'find']);
 
