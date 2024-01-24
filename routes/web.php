@@ -36,3 +36,6 @@ Route::get('/login_form', [App\Http\Controllers\HomeController::class, 'index'])
 
 Route::get('/user/product_detail/{id}', [ProductController::class, 'find']);
 
+Route::get('/user/product_search', [ProductController::class, 'search_get']);
+Route::post('/user/product_search', [ProductController::class, 'search']);
+

@@ -26,6 +26,11 @@ class Product extends Model
         return $query->where('release_flag', '=', 1);
     }
 
+    // 名前の検索
+    public function scopeNameLike($query, $str) {
+        return $query->where('name', 'LIKE', '%'.$str.'%');
+    }
+
     public function category() {
         return $this->belongsTo('App\Models\Category');
     }
