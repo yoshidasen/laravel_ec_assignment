@@ -35,6 +35,8 @@
     @endforeach
     </div>
 
+    <a href="/user/product_cart">ka-to</a>
+
 
     <!-- <table style="border: 1px solid #000;">
         <tr>
