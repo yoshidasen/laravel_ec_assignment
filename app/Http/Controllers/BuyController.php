@@ -142,6 +142,13 @@ class BuyController extends Controller
         // sessionの削除
         $request->session()->forget('cart');
 
-        return redirect()->action([ProductController::class, 'index']);
+        if($payment_method == 'bank_transfer') {
+            $payment = '銀行振り込み';
+        } else {
+            $payment = 'カード';
+        }
+        
+        return view('user.product_buy_completion',['payment_method' => $payment, 'price_sum' => $price_sum]);
     }
+
 }
