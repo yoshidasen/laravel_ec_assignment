@@ -54,3 +54,6 @@ Route::post('/user/product_buy_confirm', [BuyController::class, 'buy_confirm']);
 
 Route::get('/user/product_buy_completion', [BuyController::class, 'buy']);
 Route::post('/user/product_buy_completion', [BuyController::class, 'buy']);
+
+// Route::get('/user/product_buy_completion', [BuyController::class, 'buy_completion']);
+// Route::post('/user/product_buy_completion', [BuyController::class, 'buy_completion']);
