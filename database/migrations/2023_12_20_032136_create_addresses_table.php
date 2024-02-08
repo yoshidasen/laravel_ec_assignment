@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->nullable(false);
             $table->string('name')->nullable(false);
             $table->integer('telephone_number')->nullable(false);
-            $table->integer('post-code')->nullable(false);
+            $table->integer('post_code')->nullable(false);
             $table->string('prefectures')->nullable(false);
             $table->string('municipalities')->nullable(false);
             $table->string('street_address');

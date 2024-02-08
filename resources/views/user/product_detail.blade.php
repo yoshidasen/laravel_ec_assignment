@@ -8,10 +8,11 @@
     <p style="background: gold; width: 80px; text-align: center; border-radius: 10px;">{{$items->category->name}}</p>
     <img src="" alt="{{$items->name}}">
     <p>{{$items->price}}<small>税抜き{{$items->price / 1.1}}</small></p>
-    <form action="/user/product_detail/{{$items->id}}" method="post">
+    <form action="/user/product_cart_confirm" method="post">
+        @csrf
         <input type="hidden" name="id" value="{{$items->id}}">
         <input type="hidden" name="name" value="{{$items->name}}">
-        <input type="hidden" name="quantity" value="{{$items->quantity}}">
+        数量<input type="number" name="quantity" value="1" min="1">
         <input type="hidden" name="price" value="{{$items->price}}">
         <input type="submit" value="カートに入れる">
     </form>
